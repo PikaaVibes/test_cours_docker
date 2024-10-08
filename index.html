@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troll Webpage</title>
+    <style>
+        /* Style global du body */
+        body {
+            background-color: black;
+            color: lime;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Encadré autour du titre */
+        h1 {
+            font-size: 4em;
+            text-shadow: 2px 2px 4px red;
+            border: 5px solid lime;
+            padding: 20px;
+            display: inline-block;
+            animation: rotate 3s infinite alternate;
+        }
+
+        /* Style des boutons trolls */
+        .troll-button {
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: lime;
+            border: 2px solid red;
+            color: black;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .troll-button:hover {
+            background-color: red;
+            color: white;
+        }
+
+        /* Gif dans le site */
+        img {
+            border: 3px solid white;
+            margin: 20px;
+            width: 200px;
+            height: auto;
+            animation: bounce 2s infinite;
+        }
+
+        /* Animation de rotation pour le titre */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Animation de rebond pour les images */
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Style du message troll */
+        .troll-message {
+            font-size: 3em;
+            margin-top: 50px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        /* Couleur de la police changeante */
+        @keyframes color-change {
+            0% { color: lime; }
+            50% { color: yellow; }
+            100% { color: lime; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue au site troll !</h1>
+    <p>Clique sur le bouton si tu oses...</p>
+    <button class="troll-button" onclick="showTroll()">Clique ici</button>
+
+    <img src="https://media.giphy.com/media/3oEduQAsYcJKQH2XsI/giphy.gif" alt="Trollface">
+    <img src="https://media.giphy.com/media/l0MYF8wuv1nA19Gkw/giphy.gif" alt="LOL">
+
+    <div class="troll-message" id="trollMessage">Tu viens de te faire troller ! 😂</div>
+
+    <script>
+        function showTroll() {
+            const message = document.getElementById("trollMessage");
+            message.style.opacity = 1;
+            message.style.animation = "color-change 2s infinite";
+        }
+    </script>
+</body>
+</html>
